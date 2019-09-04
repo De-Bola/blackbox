@@ -15,7 +15,7 @@
             </a>
             <h2 strong>Adebola Gbiri</h2>
             <hr>
-            <table border="double" width="100%">
+            <table border="double">
                 <tr>
                     <td>Sex:</td>
                     <td>Male</td>
@@ -73,7 +73,7 @@
             <strong>Organisational skills:</strong>
             <ul>
                 <li>Good organisational skills shown at work place<br>by always arriving on time to work and
-                    keeping to break<br>and lunch times during the course of work.
+                    keeping to<br>break and lunch times during the course of work.
                 </li>
             </ul>
             <strong>Job-related skills</strong>
@@ -94,11 +94,42 @@
         </div>
     </div>
     <div class="row">
-        <div class="column left">
-    <div class="dropdown">
-        <span>Contact me</span>
-        <div class="dropdown-content">
-            <hr>
+        <div class="column-contact-me">
+            <div id="overlay">
+                <div id="text">
+                    <div class="alert">
+                        <span class="closeBtn" onclick="off()">&times;</span>
+                        <form>
+                            <table>
+                                <thead>
+                                <tr>
+                                    <td><label>Name</label></td>
+                                    <td><label>Email</label></td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td width="50%"><input type="text" minlength="4" name="name" value=""
+                                               placeholder="Enter your full name here..."></td>
+                                    <td width="50%"><input type="Email" name="email" placeholder="here@gmail.com">
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <label>Title</label><br>
+                            <input type="text" name="title" placeholder="Topic"><br/>
+                            <span>
+                                <label>Message</label><br>
+                                <textarea minlength="20" placeholder="Enter your message here..."></textarea>
+                                <button class="overlay-submit-btn"> submit </button>
+                            </span>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button onclick="on()">Contact me</button>
+            </div>
             <table id="table1">
                 <tbody>
                 <tr>
@@ -107,7 +138,7 @@
                 </tr>
                 <tr>
                     <td>Email:</td>
-                    <td>adebolaolubunmi32@gmail.com</td>
+                    <td>adebolaolubunmi32<br/>@gmail.com</td>
                 </tr>
                 <tr>
                     <td>Home Address:</td>
@@ -115,9 +146,16 @@
                 </tr>
                 </tbody>
             </table>
-            <hr/>
         </div>
-            </div></div></div>
+    </div>
 </div>
+<script>
+    function on() {
+        document.getElementById("overlay").style.display = "block";
+    }
+    function off() {
+        document.getElementById("overlay").style.display = "none";
+    }
+</script>
 </body>
 </html>
