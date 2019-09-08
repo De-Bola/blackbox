@@ -1,5 +1,5 @@
 <?php    
-$file_pointer = '../blackbox/output.txt';
+$file_pointer = 'output.txt';
 
 if(isset($_POST['submit_btn']))
 {
@@ -8,12 +8,17 @@ $email = $_POST['email'];
 $title = $_POST['title'];
 $message = $_POST['message'];
 
-$data = $name "\n" $email "\n" $title "\n" $message;
+$data = "You've received a new message from ".$name."\n"."You can reach him via: ".$email."\n"."This person wants to discuss - ".$title."\n"."Here's what they said: "."\n".$message."\n"."\n";
 
-$file_pointer = fopen('output.txt', 'a');
+if(!file_exists($file_pointer)){
+    $file_pointer = fopen('output.txt', 'w') or die("Unable to create a new file for your operation!!");
+} else{
+    $file_pointer = fopen('output.txt', 'a') or die("Unable to open file");
+}
+
 if(fwrite($file_pointer, $data))
 {
-    echo 'saved!';
+    echo 'Your message has been saved successfully!';
 }
 fclose($file_pointer);
 }
