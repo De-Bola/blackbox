@@ -1,10 +1,5 @@
 <?php    
 $file_pointer = '../blackbox/output.txt';
-if (file_exists($file_pointer)||$file_pointer.is_null) {
-    $file_pointer = fopen('output.txt', 'a');
-}else {
-    $file_pointer = fopen('output.txt', 'w');
-}
 
 if(isset($_POST['submit_btn']))
 {
